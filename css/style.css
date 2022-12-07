@@ -52,13 +52,17 @@ h2 {
   letter-spacing: 0.3px;
   text-align: left;
   color: #60495A;
-  padding: 10px 0px 10px 10px;
+  padding: 0px 20px 0 20px;
 }
 
 img {
   width: 100%;
   height: 50vh;
   object-fit: cover;
+}
+
+a {
+  color: #60495A;
 }
 
 /* Added wrapper class, set some spacing. Remember, margin sets space outside of the box, while padding sets the space inside the box */
@@ -94,6 +98,7 @@ img {
 }
 
 .myButton:hover {
+  transition: .25s ease;
 	background-color:#60495A;
 }
 
@@ -102,17 +107,42 @@ img {
 	top:1px;
 }
 
-.project {
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
+.projectImage {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 99%;
   width: 100%;
+  opacity: 0;
+  transition: .25s ease;
+  background-color: #60495A;
 }
 
-.a {
-
+.projectImage:hover .overlay {
+  opacity: .75;
 }
 
-.c {
+.imageText {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 
+.project {
+  box-shadow: 0 0px 1px 0 rgb(0 0 0 / 40%);
+  width: 100%;
 }
 
 .time {
@@ -141,16 +171,8 @@ img {
   line-height: 1.29;
   letter-spacing: 0.1px;
   text-align: left;
-  color: #60495A;
-  padding: 10px 0px 10px 10px;
-  border-top: 1px solid #4a4a4a;
-}
-
-.logo {
-  width: 115px;
-  height: 21.1px;
-  object-fit: contain;
-  padding: 20px;
+  color: #000000;
+  padding: 0 20px 0px 20px;
 }
 
 /* Removed min-width because some mobile screens are smaller than 500px */
@@ -159,8 +181,14 @@ img {
   margin: auto;
 }
 
-footer {
-  margin-top: 44px;
+footer div {
+  height: 100%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-content: center;
+  padding: 10px 20px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 @media all and (max-width:700px) {
